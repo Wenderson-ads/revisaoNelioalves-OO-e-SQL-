@@ -18,8 +18,8 @@ public class DB {
 				String url = props.getProperty("dburl");
 				conn = DriverManager.getConnection(url, props);
 			}
-			catch (SQLException e) {
-				throw new DbException(e.getMessage());
+			catch (SQLException erro) {
+				throw new DbException(erro.getMessage());
 			}
 		}
 		return conn;
@@ -41,8 +41,8 @@ public class DB {
 			props.load(fs);
 			return props;
 		}
-		catch (IOException e) {
-			throw new DbException(e.getMessage());
+		catch (IOException erro) {
+			throw new DbException(erro.getMessage());
 		}
 	}
 }
